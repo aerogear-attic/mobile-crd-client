@@ -9,7 +9,7 @@ if [ ! -d ${code_gen} ]; then
    mkdir -p ${k8} && cd $k8 && git clone git@github.com:kubernetes/code-generator.git
 fi
 
-if [ ! -d {apimachinery} ]; then
+if [ ! -d ${apimachinery} ]; then
   cd ${k8} && git clone git@github.com:kubernetes/apimachinery.git && cd ${apimachinery} && git checkout kubernetes-1.8.0
 fi
 
