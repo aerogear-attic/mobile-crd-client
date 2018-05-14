@@ -23,8 +23,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
 
-	"github.com/aerogear/mobile-cli/pkg/apis/servicecatalog"
-	"github.com/aerogear/mobile-cli/pkg/apis/servicecatalog/v1beta1"
+	"github.com/aerogear/mobile-crd-client/pkg/apis/servicecatalog"
+	"github.com/aerogear/mobile-crd-client/pkg/apis/servicecatalog/v1beta1"
 )
 
 // Install registers the API group and adds types to a scheme
