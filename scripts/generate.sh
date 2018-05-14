@@ -21,4 +21,4 @@ cd ${code_gen} && git checkout release-1.8
 
 cd ${code_gen}
 ./generate-internal-groups.sh client github.com/aerogear/mobile-crd-client/pkg/client/mobile github.com/aerogear/mobile-crd-client/pkg/apis github.com/aerogear/mobile-crd-client/pkg/apis  "mobile:v1alpha1"
-./generate-internal-groups.sh client github.com/aerogear/mobile-cli/pkg/client/servicecatalog github.com/aerogear/mobile-cli/pkg/apis github.com/aerogear/mobile-cli/pkg/apis  "servicecatalog:v1beta1"
+./generate-internal-groups.sh client github.com/aerogear/mobile-crd-client/pkg/client/servicecatalog github.com/aerogear/mobile-crd-client/pkg/apis github.com/aerogear/mobile-crd-client/pkg/apis  "servicecatalog:v1beta1"
