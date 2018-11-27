@@ -1,3 +1,4 @@
+// Taken from https://github.com/aerogear/mobile-developer-console/blob/master/pkg/apis/aerogear/v1alpha1/types.go
 package v1alpha1
 
 import (
