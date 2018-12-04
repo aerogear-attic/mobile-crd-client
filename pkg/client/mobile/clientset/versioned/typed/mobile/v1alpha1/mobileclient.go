@@ -37,6 +37,7 @@ type MobileClientsGetter interface {
 type MobileClientInterface interface {
 	Create(*v1alpha1.MobileClient) (*v1alpha1.MobileClient, error)
 	Update(*v1alpha1.MobileClient) (*v1alpha1.MobileClient, error)
+	UpdateStatus(*v1alpha1.MobileClient) (*v1alpha1.MobileClient, error)
 	Delete(name string, options *v1.DeleteOptions) error
 	DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error
 	Get(name string, options v1.GetOptions) (*v1alpha1.MobileClient, error)
@@ -114,6 +115,22 @@ func (c *mobileClients) Update(mobileClient *v1alpha1.MobileClient) (result *v1a
 		Namespace(c.ns).
 		Resource("mobileclients").
 		Name(mobileClient.Name).
+		Body(mobileClient).
+		Do().
+		Into(result)
+	return
+}
+
+// UpdateStatus was generated because the type contains a Status member.
+// Add a +genclient:noStatus comment above the type to avoid generating UpdateStatus().
+
+func (c *mobileClients) UpdateStatus(mobileClient *v1alpha1.MobileClient) (result *v1alpha1.MobileClient, err error) {
+	result = &v1alpha1.MobileClient{}
+	err = c.client.Put().
+		Namespace(c.ns).
+		Resource("mobileclients").
+		Name(mobileClient.Name).
+		SubResource("status").
 		Body(mobileClient).
 		Do().
 		Into(result)

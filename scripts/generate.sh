@@ -6,9 +6,9 @@ apimachinery=${k8}/apimachinery
 clientgo=${k8}/client-go
 kubernetes=${k8}/kubernetes
 
-apimachinery_branch="release-1.11"
-clientgo_branch="release-8.0"
-code_gen_branch="release-1.11"
+apimachinery_branch="kubernetes-1.11.0"
+clientgo_branch="kubernetes-1.11.0"
+code_gen_branch="kubernetes-1.11.0"
 
 
 if [ ! -d ${apimachinery} ]; then

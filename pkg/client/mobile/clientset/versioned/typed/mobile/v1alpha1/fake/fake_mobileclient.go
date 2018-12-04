@@ -100,6 +100,18 @@ func (c *FakeMobileClients) Update(mobileClient *v1alpha1.MobileClient) (result 
 	return obj.(*v1alpha1.MobileClient), err
 }
 
+// UpdateStatus was generated because the type contains a Status member.
+// Add a +genclient:noStatus comment above the type to avoid generating UpdateStatus().
+func (c *FakeMobileClients) UpdateStatus(mobileClient *v1alpha1.MobileClient) (*v1alpha1.MobileClient, error) {
+	obj, err := c.Fake.
+		Invokes(testing.NewUpdateSubresourceAction(mobileclientsResource, "status", c.ns, mobileClient), &v1alpha1.MobileClient{})
+
+	if obj == nil {
+		return nil, err
+	}
+	return obj.(*v1alpha1.MobileClient), err
+}
+
 // Delete takes name of the mobileClient and deletes it. Returns an error if one occurs.
 func (c *FakeMobileClients) Delete(name string, options *v1.DeleteOptions) error {
 	_, err := c.Fake.
